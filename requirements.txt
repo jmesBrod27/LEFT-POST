@@ -1,0 +1,6 @@
+boto3
+python-dotenv
+simplejson
+Flask
+pytest
+pytest-cov
