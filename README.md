@@ -3,13 +3,18 @@
 
 
 # BUILD
+
 Under /app, in file db, add secret key and access id. 
+
 docker build -t app .
+
 docker run -d -p 8080:8080 app   
 
 Or
 cd app
+
 export Flask_run=api.py
+
 python -m flask run 
 
 # POSTMAN COLLECTION LINK
