@@ -10,7 +10,7 @@ load_dotenv("../.env")
 def connection():
     try:   
         dynamodb = boto3.resource('dynamodb',region_name="eu-west-1",aws_access_key_id=os.getenv('ACESS_KEY'), \
-            aws_secret_access_key=os.getenv('SECRET_KEY'))
+            aws_secret_access_key= os.getenv('SECRET_KEY'))
         
         table = dynamodb.Table('report-weather')
 
@@ -24,7 +24,7 @@ def create_weather(ids, sensor_id,temperature, humidity, city, country,air_pollu
     dynamodb = connection()
     timestamp = datetime.datetime.now()
     try:   
-        _ = dynamodb.put_item(
+        res = dynamodb.put_item(
             # Data to be inserted
             Item={
                 'ID': ids,
